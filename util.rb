@@ -7,7 +7,7 @@ require 'optparse'
 # option parsing
 options = {:config => "config.rb", :defaults => "defaults.rb"}
 parser = OptionParser.new do |opts|
-  opts.banner = "Usage: util.rb [options]"
+  opts.banner = "Usage: #{File.basename(__FILE__)} [options]"
 
   opts.on('-c', '--config <config_file>',
           "Config file (default: #{options[:config]})") do |c|
