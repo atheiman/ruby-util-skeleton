@@ -37,7 +37,7 @@ logger.formatter = proc do |severity, datetime, progname, msg|
   "[#{datetime.strftime('%Y-%m-%d %H:%M:%S')}] #{severity}: #{msg}\n"
 end
 
-# load suspended coordinators
+# load items
 json = File.read(@config[:items_filename])
 items = JSON.parse(json, :symbolize_names => true)
 logger.debug { "Loaded items from json: #{items}" }
