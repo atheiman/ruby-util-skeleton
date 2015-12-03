@@ -1,0 +1,12 @@
+[
+  {
+    "id": "abc",
+    "name": "Some Name",
+    "comment": "This is a comment about the thing"
+  },
+  {
+    "id": "xyz",
+    "name": "Another Name",
+    "comment": "Here we have another comment about a thing"
+  }
+]
