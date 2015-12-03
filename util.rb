@@ -26,10 +26,8 @@ parser = OptionParser.new do |opts|
 end.parse!
 
 # load defaults, override with config
-puts options
-exit
 load options[:config]
-load "defaults.rb"
+load options[:defaults]
 @config = @defaults.merge!(@config)
 
 # create logger
