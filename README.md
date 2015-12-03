@@ -9,8 +9,8 @@ This repo is a skeleton for a simple ruby utility.
 Download:
 
 ```shell
-curl https://github.com/atheiman/ruby-util-skeleton/archive/master.tar.gz | tar xvz
-mv ruby-util-skeleton my-util-project
+curl -L https://github.com/atheiman/ruby-util-skeleton/archive/master.tar.gz | tar xz
+mv ruby-util-skeleton-master <my-util-project>
 ```
 
 ## Basic Startup
