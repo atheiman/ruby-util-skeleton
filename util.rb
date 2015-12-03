@@ -1,9 +1,34 @@
+#!/usr/bin/env ruby
 require 'logger'
 require 'json'
 require 'net/http'
+require 'optparse'
+
+# option parsing
+options = {:config => "config.rb", :defaults => "defaults.rb"}
+parser = OptionParser.new do |opts|
+  opts.banner = "Usage: util.rb [options]"
+
+  opts.on('-c', '--config <config_file>',
+          "Config file (default: #{options[:config]})") do |c|
+    options[:config] = c
+  end
+
+  opts.on('-d', '--defaults <defaults_file>',
+          "Default file (default: #{options[:defaults]})") do |d|
+    options[:defaults] = d
+  end
+
+  opts.on('-h', '--help', 'Displays help') do
+    puts opts
+    exit
+  end
+end.parse!
 
 # load defaults, override with config
-load "config.rb"
+puts options
+exit
+load options[:config]
 load "defaults.rb"
 @config = @defaults.merge!(@config)
 

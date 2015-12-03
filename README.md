@@ -1,9 +1,5 @@
 # Ruby Util Skeleton
 
-> TODO:
->
-> 1. add `-c, --config <config>` flag for config.rb
-
 This repo is a skeleton for a simple ruby utility.
 
 Download:
@@ -26,5 +22,5 @@ This is pretty open-ended, but a straight-forward usage would be:
 Use the util:
 
 ```shell
-ruby util.rb
+./util.rb
 ```
