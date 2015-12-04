@@ -1,3 +1,3 @@
 @config = {
-  :log_level => "DEBUG",
+  log_level: 'DEBUG'
 }

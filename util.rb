@@ -5,8 +5,8 @@ require 'net/http'
 require 'optparse'
 
 # option parsing
-options = {:config => "config.rb", :defaults => "defaults.rb"}
-parser = OptionParser.new do |opts|
+options = { config: 'config.rb', defaults: 'defaults.rb' }
+OptionParser.new do |opts|
   opts.banner = "Usage: #{File.basename(__FILE__)} [options]"
 
   opts.on('-c', '--config <config_file>',
@@ -33,13 +33,13 @@ load options[:defaults]
 # create logger
 @logger = Logger.new(@config[:log_location])
 @logger.level = Logger.const_get(@config[:log_level])
-@logger.formatter = proc do |severity, datetime, progname, msg|
+@logger.formatter = proc do |severity, datetime, _progname, msg|
   "[#{datetime.strftime('%Y-%m-%d %H:%M:%S')}] #{severity}: #{msg}\n"
 end
 
 # load items
 json = File.read(@config[:items_filename])
-items = JSON.parse(json, :symbolize_names => true)
+items = JSON.parse(json, symbolize_names: true)
 @logger.debug { "Loaded items from json: #{items}" }
 
 # do something with the items you loaded
@@ -53,7 +53,7 @@ items.each do |item|
 end
 
 # write responses to output file
-File.open(@config[:output_filename], "w") do |outfile|
+File.open(@config[:output_filename], 'w') do |outfile|
   if @config[:pretty_output]
     outfile.write(JSON.pretty_generate(@responses))
   else
