@@ -1,1 +1,3 @@
-gem 'rubocop'
+group :development do
+  gem 'rubocop'
+end
